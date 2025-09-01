@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    environment:
+      MODEL_PATH: /app/models/apkshield_model.joblib
+      PREPROC_PATH: /app/models/preproc.joblib
+      DB_URL: sqlite:///app/data/apkshield.db
+      RULE_WEIGHTS_JSON: '{"system_alert":1.5,"accessibility":1.5,"suspicious_url":2.0,"invalid_cert":2.0}'
+    networks:
+      - apkshield-network
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      VITE_API_URL: http://localhost:8000
+    depends_on:
+      - backend
+    networks:
+      - apkshield-network
+
+networks:
+  apkshield-network:
+    driver: bridge

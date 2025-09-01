@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-gray-700;
+  }
+  body {
+    @apply bg-gray-900 text-white antialiased;
+    overflow-x: hidden;
+  }
+  
+  /* Improved focus states for accessibility */
+  button:focus-visible,
+  a:focus-visible,
+  input:focus-visible {
+    @apply outline-none ring-2 ring-neon-500 ring-offset-2 ring-offset-gray-900;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-gradient-to-r from-neon-500 to-electric-500 text-white px-8 py-4 rounded-full font-semibold shadow-neon hover:shadow-neon-lg transition-all duration-300 hover:scale-105 hover:rounded-3xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-800/50 backdrop-blur-sm border border-gray-700 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-700/50 hover:border-gray-600 transition-all duration-300 hover:rounded-3xl;
+  }
+  
+  .card {
+    @apply bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-3xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:rounded-2xl;
+  }
+  
+  .card-glow {
+    @apply bg-gradient-to-br from-gray-800/90 to-gray-900/90 backdrop-blur-sm rounded-3xl p-8 shadow-glow border border-neon-500/20 hover:border-neon-500/40 hover:shadow-neon transition-all duration-500 hover:rounded-2xl;
+  }
+  
+  .input {
+    @apply bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl px-6 py-4 text-white placeholder-gray-400 focus:border-neon-500 focus:ring-2 focus:ring-neon-500/20 transition-all duration-300 focus:rounded-3xl;
+  }
+  
+  .risk-gauge {
+    @apply relative w-32 h-32 mx-auto;
+  }
+  
+  .animate-scan {
+    animation: scan 2s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-neon-400 via-electric-400 to-cyber-400 bg-clip-text text-transparent;
+  }
+  
+  .glass-effect {
+    @apply bg-white/5 backdrop-blur-md border border-white/10;
+  }
+  
+  @keyframes scan {
+    0%, 100% { transform: translateY(0); opacity: 1; }
+    50% { transform: translateY(-10px); opacity: 0.7; }
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% { 
+      box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+      transform: scale(1);
+    }
+    50% { 
+      box-shadow: 0 0 40px rgba(0, 255, 136, 0.6);
+      transform: scale(1.02);
+    }
+  }
+}

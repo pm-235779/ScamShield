@@ -1,0 +1,30 @@
+# Core web framework
+fastapi==0.104.1
+uvicorn==0.24.0
+python-multipart==0.0.6
+
+# APK analysis and ML
+androguard==3.4.0a1
+scikit-learn==1.5.1
+xgboost==2.0.3
+pandas==2.2.0
+numpy>=1.26.0
+joblib==1.4.2
+
+# Feature extraction dependencies (from ML folder)
+rapidfuzz==3.2.0
+tldextract==3.4.4
+cryptography>=3.0.0
+
+# Database and storage
+sqlalchemy==2.0.23
+aiofiles==23.2.1
+
+# Authentication
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+
+# ML optimization and visualization
+optuna==3.5.0
+matplotlib==3.8.4
+seaborn==0.13.2
