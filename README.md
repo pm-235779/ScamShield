@@ -51,3 +51,7 @@ apkshield/
 2. Upload malicious APK → **High Risk** (high score)
 3. Compare mode shows concrete differences
 4. View analysis history and metrics
+
+
+![WhatsApp Image 2025-09-01 at 20 51 49_51509b63](https://github.com/user-attachments/assets/6564523f-1014-475f-8eec-91148bc39f00)
+
